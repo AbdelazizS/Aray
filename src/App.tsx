@@ -10,6 +10,10 @@ import RegisterPage from "./Views/Auth/RegisterPage";
 import { useEffect } from "react";
 import AcademiesPagePage from "./Views/AcademiesPage";
 import DetailsPage from "./Views/DetailsPage";
+import ScrollToTop from "./hooks/ScrollToTop";
+import ProtectedRoute from "./Views/ProtectedRoute";
+import PaymentsPage from "./Views/PaymentsPage";
+import HistoryPage from "./Views/HistoryPage";
 
 function App() {
   useEffect(() => {
@@ -20,18 +24,24 @@ function App() {
     <>
       <AuthProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/academies" element={<AcademiesPagePage />} />
             <Route path="/activity/:id" element={<DetailsPage />} />
             <Route path="/auth/login" element={<LoginPage />} />
             <Route path="/auth/register" element={<RegisterPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/payments" element={<PaymentsPage />} />
+            </Route>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/history" element={<HistoryPage />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
     </>
   );
 }
-
 
 export default App;

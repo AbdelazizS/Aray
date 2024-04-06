@@ -1,5 +1,5 @@
 import { AlertCircle, Wallet } from "lucide-react";
-import { Navbar } from "../components/Navbar";
+import { NavBar } from "../components/NavBar";
 import React, { useEffect, useState } from "react";
 import { TimePicker12HourWrapper } from "../components/time-picker/time-picker-12hour-wrapper";
 import { Button } from "../components/ui/button";
@@ -55,14 +55,14 @@ export default function DetailsPage() {
   const [totalPrice, setTotalPrice] = React.useState<any>(price!);
   const [bookingConfirmed, setBookingConfirmed] = React.useState(false);
   const [payload, setPayload] = useState({});
-  const { id} = useParams();
+  const { id } = useParams();
 
   const values = ["1", "2", "3", "4", "5"];
   const auth = useAuth();
-
+  const currDate:any = new Date().setDate(new Date().getUTCDate()-1);
   const { t } = useTranslation(["forms", "main", "academies"]);
 
-  const timeFormat = (time:any) => {
+  const timeFormat = (time: any) => {
     let hour = time.getHours() < 10 ? `0${time.getHours()}` : time.getHours();
     let minute =
       time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
@@ -114,7 +114,7 @@ export default function DetailsPage() {
     }
   }
 
-  const addNewBooking = async (values:any) => {
+  const addNewBooking = async (values: any) => {
     setLoading(true);
     const payload = {
       type: "activity",
@@ -167,17 +167,19 @@ export default function DetailsPage() {
 
   return (
     <>
-      <Navbar />
+      <NavBar />
       <section className="">
         <Toaster />
         {loading && <Loader />}
         <div className="relative ">
-          <div className="absolute left-2 top-4 px-3 py.5 bg-black/70 shadow-lg">
+          <div className="absolute ltr:left-2 rtl:right-2 top-4 px-3 py.5 bg-black/70 shadow-lg">
             <span
               onClick={() => navigate(-1)}
               className="cursor-pointer focus:outline-none hover:underline text-white text-sm font-bold flex items-center gap-2 p-.5"
             >
-              {/* <ArrowLeftIcon  />  */} Back
+              {t("back", {
+                ns: "main",
+              })}
             </span>
           </div>
           {item?.image && (
@@ -249,7 +251,7 @@ export default function DetailsPage() {
                             selected={field.value}
                             onSelect={field.onChange}
                             disabled={(date) =>
-                              date > new Date() || date < new Date("1900-01-01")
+                              date <  currDate || date < new Date("1900-01-01")
                             }
                             initialFocus
                           />
@@ -303,7 +305,7 @@ export default function DetailsPage() {
                     render={({ field }) => (
                       <FormItem>
                         <Select
-                          onValueChange={(value:any) => {
+                          onValueChange={(value: any) => {
                             setTotalPrice(value * price);
                             field.onChange(value);
                             setPeopleCount(value);

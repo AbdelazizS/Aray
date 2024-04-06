@@ -7,6 +7,7 @@ import network from "../assets/network.svg";
 import register from "../assets/register.svg";
 import login from "../assets/login.svg";
 import empty from "../assets/empty.svg";
+import reDirect from "../assets/redirect.svg";
 
 interface navLinksTypes {
   href: string;
@@ -58,3 +59,4 @@ export const loginImg: any = login;
 export const registerImg: any = register;
 export const emptyImg: any = empty;
 export const notFound: any = notfound;
+export const redirectImg: any = reDirect;
