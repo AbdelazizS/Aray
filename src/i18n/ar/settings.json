@@ -1,0 +1,21 @@
+{
+  "our": "",
+  "back": "رجوع",
+  "cancel": "إلغاء",
+  "title": "بيانات الموقع والاعدادات",
+  "edit_profile": "تعديل بيانات الحساب",
+  "change_theme": "تغيير المظهر",
+  "delete_account": "حذف الحساب",
+  "Logout": "تسجيل الخروج",
+  "privacy_policy": "سياسة الخصوصية",
+  "terms_conditions": "البنود والاحكام",
+  "modal_title": "حذف الحساب",
+  "modal_desc": "سوف يتم حذف جميع بياناتك , اضغط للتاكيد  ",
+  "modal_confirm": "تاكيد الحذف",
+  "change_language": "تغيير اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "select_language": "إختر اللغة",
+  "account_deleted": "تم حذف الحساب بنجاح",
+  "account_deleted_desc": "مرحبا بك في اي وقت آخر"
+}

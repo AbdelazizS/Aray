@@ -1,0 +1,17 @@
+{
+    "our": "Our",
+    "back": "Back",
+    "cancel": "cancel",
+    "title": "Website Settings and Data",
+    "edit_profile": "Edit Profile",
+    "change_theme": "Change Theme",
+    "delete_account": "Delete Account",
+    "Logout": "Logout",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms and Conditions",
+    "modal_title": "Account Deleting",
+    "modal_desc": "Make Sure data all your data will be lost. Click Confirm when you're done",
+    "modal_confirm": "Confirm Delete",
+    "change_language": "Change Language"
+  }
+  

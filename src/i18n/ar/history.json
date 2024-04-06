@@ -1,0 +1,19 @@
+{
+  "our": "",
+  "back": "رجوع",
+  "cancel":"إلغاء",
+  "cancel_booking_msg": "تم الالغاء بنجاح",
+  "cancel_booking_msg_desc": "لقد تم الغاء حجزك بنجاح",
+  "booking_no": "رقم الحجز",
+  "type": "النوع",
+  "total_amount": "اجمالي سعر الحجز",
+  "time_and_date": "وقت وتاريخ الحجز",
+  "modal_title": "الغاء الحجز",
+  "modal_desc": "سوف يتم حذف بيانات الحجز ,  اضغط للتاكيد",
+  "modal_confirm": "تاكيد الالغاء",
+  "blank_bookings": "سجل حجوزات فارغ",
+  "not_have_bookings": "ليس لديك ججوزات بعد",
+  "browse_btn": "استكشف القوائم",
+  "empty_booking_guide": "يمكنك تصفح مختفلف الانشطة المتاحة",
+  "click_to_cancel":"اضغط هنا للالغاء"
+}

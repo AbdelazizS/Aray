@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.outline-0 {
+  outline: 0 !important;
+}
+
+.justify-start {
+  justify-content: start !important;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem !important;
+}
+.pb-10 {
+  padding-bottom: 2.5rem !important;
+}
+
+.slides-container {
+  padding: 1rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: #bcca35 !important;
+}
+.wrapper {
+  padding: 0 !important;
+}
+
+.button:hover span,
+.button:hover svg {
+  color: #fff;
+}
+.writing-lr {
+  direction: ltr !important;
+}
+.writing-rl {
+  direction: rtl !important;
+}
+
+
+.pb-24 {
+  padding-bottom: 6rem !important;
+}
+
+.slides-container {
+  padding: 1rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: #bcca35 !important;
+}
+
+.dark::-webkit-scrollbar {
+  width: 10px;
+}
+.dark::-webkit-scrollbar-track {
+  background: #424242;
+}
+.dark::-webkit-scrollbar-thumb {
+  background: #686868;
+  border-radius: 8px;
+}
+.dark::-webkit-scrollbar-thumb:hover {
+  background: #7e7e7e;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9f9f9f;
+}
+
+
+/* *=========== Main theme =========== */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: #a7b522;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+    --pulse: #e5e7eb;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    --pulse-foreground: #272525;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* $(window).on("scroll", function () {
+  var scrolling = $(this).scrollTop();
+
+  if (scrolling > $('header').innerHeight()) {
+    $(".header").addClass("header--fixed");
+  } else {
+    $(".header").removeClass("header--fixed");
+  }
+}); */
+
+.header--fixed {
+  position: fixed;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  padding-top: 0;
+  -webkit-box-shadow: 0 3px 18px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.05);
+  -webkit-animation: header_in 0.4s linear forwards;
+  -moz-animation: header_in 0.4s linear forwards;
+  -o-animation: header_in 0.4s linear forwards;
+  animation: header_in 0.4s linear forwards;
+}
+
+/* Fixed Header animation */
+/* @-webkit-keyframes header_in {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-moz-keyframes header_in {
+  0% {
+    -moz-transform: translateY(-100%);
+         transform: translateY(-100%);
+  }
+  100% {
+    -moz-transform: translateY(0);
+         transform: translateY(0);
+  }
+}
+@-o-keyframes header_in {
+  0% {
+    -o-transform: translateY(-100%);
+       transform: translateY(-100%);
+  }
+  100% {
+    -o-transform: translateY(0);
+       transform: translateY(0);
+  }
+}
+@keyframes header_in {
+  0% {
+    -webkit-transform: translateY(-100%);
+       -moz-transform: translateY(-100%);
+         -o-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+       -moz-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+  }
+} */

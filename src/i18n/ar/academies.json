@@ -1,0 +1,13 @@
+{
+  "page_subtitle":"عدد الحصص ومدة التدريب للشخص الواحد",
+  "duration": "المدة",
+  "classes": "الحصص",
+  "currency": "ريال",
+  "click_to_subscribe": "اضغط هنا للإشتراك",
+  "click_to_confirm_reservation": "اضغط هنا لتاكيد الحجز الخاص بك",
+  "modal_title": "عدد الاشخاص",
+  "per_minute": "للدقيقة ",
+  "one_person": "تعرفة للشخص ",
+  "modal_confirm_pay_&": "تأكيد الحضور والدفع ",
+  "total_amount": "إجمالي سعر الحجز"
+}

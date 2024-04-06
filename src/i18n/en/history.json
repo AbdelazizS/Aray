@@ -1,0 +1,19 @@
+{
+  "our": "Our",
+  "back": "Back",
+  "cancel":"cancel",
+  "cancel_booking_msg": "Successfully canceled from Your Bookings",
+  "cancel_booking_msg_desc": "Your Reservation has been canceled",
+  "booking_no": "Reservation Number",
+  "type": "Type",
+  "total_amount": "Total Reservation Amount",
+  "time_and_date":"Reservation Date And Time",
+  "modal_title":"Cancel Booking",
+  "modal_desc":"Make changes to your Bookings here. Click Confirm when you're done.",
+  "modal_confirm":"Confirm Canceling",
+  "blank_bookings":"Blank Bookings List",
+  "not_have_bookings":"Not Have Bookings Yet",
+  "browse_btn":"Browse Our Lists",
+  "empty_booking_guide":"You Can Freely add new bookings to Your List",
+  "click_to_cancel":"click here to cancel"
+}

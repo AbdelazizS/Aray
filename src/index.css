@@ -1,0 +1,10 @@
+@font-face {
+  font-family: Jannah;
+  src: url(./jannah.ttf);
+}
+
+
+html , * {
+  scroll-behavior: smooth !important;
+  font-family: "Jannah" !important;
+}
