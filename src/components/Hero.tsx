@@ -29,25 +29,21 @@ export const Hero = () => {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper w-full"
     >
-      {heroData.map((item:any, i:any) => (
+      {heroData.map((item: any, i: any) => (
         <SwiperSlide key={i}>
           <section className="max-h-[500px] w-full">
             <div className="relative flex justify-center items-center">
-              {!loaded && (
-                <div className="h-[200px] md:h-[500px] bg-muted w-full"></div>
-              )}
+              <div className={`w-full object-cover h-200px  md:max-h-[500px] opacity-100 ${loaded && 'hidden opacity-0'}`}></div>
               <div className="max-w-2xl mx-4 rounded-md absolute bg-foreground/50 dark:bg-background/60 p-4 text-center ">
                 <h1 className="text-popover dark:text-accent-foreground font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">
                   {item.text}
                 </h1>
               </div>
-              {loaded && (
-                <img
-                  className="w-full object-cover h-200px  md:max-h-[500px]"
-                  src={item.ImageSrc}
-                  alt="/"
-                />
-              )}
+              <img
+                className={`w-full object-cover h-200px  md:max-h-[500px] opacity-0 ${loaded && 'opacity-100'}`}
+                src={item.ImageSrc}
+                alt="/"
+              />
             </div>
           </section>
         </SwiperSlide>

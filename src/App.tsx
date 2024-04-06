@@ -1,4 +1,3 @@
-import { ScrollToTop } from "./components/ScrollToTop";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import i18next from "i18next";
@@ -9,6 +8,8 @@ import HomePage from "./Views/HomePage";
 import LoginPage from "./Views/Auth/LoginPage";
 import RegisterPage from "./Views/Auth/RegisterPage";
 import { useEffect } from "react";
+import AcademiesPagePage from "./Views/AcademiesPage";
+import DetailsPage from "./Views/DetailsPage";
 
 function App() {
   useEffect(() => {
@@ -19,9 +20,10 @@ function App() {
     <>
       <AuthProvider>
         <BrowserRouter>
-          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/academies" element={<AcademiesPagePage />} />
+            <Route path="/activity/:id" element={<DetailsPage />} />
             <Route path="/auth/login" element={<LoginPage />} />
             <Route path="/auth/register" element={<RegisterPage />} />
           </Routes>

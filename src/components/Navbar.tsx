@@ -73,7 +73,7 @@ export const Navbar = ({ setLoading }:any) => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <NavigationMenuItem className="font-bold flex">
-                    <img src="../src/assets/logo.png" className="h-12" alt="" />
+                  <img src={logoImg} className="h-12 object-cover" alt="" />
                   </NavigationMenuItem>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">

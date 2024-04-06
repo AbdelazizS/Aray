@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   AlertCircle,
   CheckCircle2,
@@ -298,13 +298,15 @@ export default function RegisterPage() {
                             ns: "forms",
                           })}
                         </FormLabel>
-                        
+
                         <FormControl className="outline-0 ring-0">
                           <Input
                             // required
-                            onChange={(e) => field.onChange(e.target.files?.[0])}
+                            onChange={(e) =>
+                              field.onChange(e.target.files?.[0])
+                            }
                             type="file"
-                            className="bg-muted border-0 opacity-0"
+                            className="bg-muted border-0 opacity-0 w-2"
                           />
                         </FormControl>
 
@@ -426,6 +428,17 @@ export default function RegisterPage() {
                   {`${t("submit", { ns: "forms" })}`}
                 </Button>
               </form>
+
+              <div className="text-muted-foreground mt-2">
+                {t("have_account", { ns: "forms" })}
+                <Link
+                  to={"/auth/login"}
+                  className=" font-medium hover:underline text-primary hover:text-primary-500 mt-0"
+                >
+                  {" "}
+                  {t("log_to_account", { ns: "forms" })}
+                </Link>
+              </div>
             </Form>
           </div>
         </div>

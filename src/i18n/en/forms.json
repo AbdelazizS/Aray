@@ -4,6 +4,8 @@
   "sign_in": "Sign In",
   "create_account": "Create Account",
   "create_my_account": "Create my account ?",
+  "log_to_account": "Sign in",
+  "have_account": "have an account ?",
   "select_reservation_date": "Select Your Reservation Date",
   "pick_date": "Pick a date",
   "start_time_label": "Start Time",

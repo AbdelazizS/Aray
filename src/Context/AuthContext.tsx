@@ -5,7 +5,7 @@ import { useContext, createContext, useState } from "react";
 
 export type GlobalContent = {
   token: string;
-  user: { name?: String };
+  user: { name?: String; status?: String; id?: number };
   logOut: () => void;
   loginAction: (c: any) => void;
   updateAction: (c: any) => void;

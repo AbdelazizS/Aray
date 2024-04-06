@@ -4,6 +4,8 @@
   "sign_in": "دخول",
   "create_account": "انشاء حساب",
   "create_my_account": "قم بانشاء حسابي ؟",
+  "log_to_account": "تسجيل الدخول ",
+  "have_account": "لدي حساب ؟",
   "select_reservation_date": " قم بإختيار تاريخ الحجز الخص بك",
   "pick_date": "اختر التاريخ",
   "start_time_label": "وقت البداية",
