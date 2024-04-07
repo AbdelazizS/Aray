@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "../components/NavBar";
-import { Card, CardHeader, CardTitle } from "../components/ui/card";
+import { NavBar } from "@/components/NavBar";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Skeleton from "../components/Skeleton";
+import Skeleton from "@/components/Skeleton";
 import Heading from "@/components/Heading";
 import { useTranslation } from "react-i18next";
 import { CircleX } from "lucide-react";

@@ -44,10 +44,13 @@ const ProtectedRoute = () => {
     <Outlet />
   ) : (
     <>
-      <div className="flex items-center justify-center h-screen w-full p-4">
+      <div className="flex items-center justify-center max-h-screen w-full p-4">
         {loading && <Loader />}
 
-        <img className="w-full h-full object-cover" alt="" src={redirectImg}/>
+        <div className="w-full h-screen">
+
+        <img className="w-full h-full" alt="" src={redirectImg}/>
+        </div>
       </div>
       <Toaster />
       {redirect && <Navigate to={"/auth/login"} />}
