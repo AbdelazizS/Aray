@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "../components/NavBar";
+import { Navbar } from "../components/Navbar";
 import { Card, CardTitle } from "../components/ui/card";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -31,7 +31,7 @@ export default function SubscriptionsPage() {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <section className="">
         <Heading title={"subscriptions_page_title"} />
         <div className="max-w-7xl mx-auto py-3">

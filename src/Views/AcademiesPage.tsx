@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "@/components/NavBar";
+import { Navbar } from "@/components/Navbar";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -59,7 +59,7 @@ export default function AcademiesPagePage() {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <section className="">
         <Heading title={"academies_page_title"} />
         <div className="max-w-7xl mx-auto py-3">

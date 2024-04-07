@@ -1,5 +1,5 @@
 import { AlertCircle, Wallet } from "lucide-react";
-import { NavBar } from "@/components/NavBar";
+import { Navbar } from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 import { TimePicker12HourWrapper } from "../components/time-picker/time-picker-12hour-wrapper";
 import { Button } from "../components/ui/button";
@@ -167,7 +167,7 @@ export default function DetailsPage() {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <section className="">
         <Toaster />
         {loading && <Loader />}

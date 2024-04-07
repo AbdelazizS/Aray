@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavBar } from "../components/NavBar";
+import { Navbar } from "../components/Navbar";
 import { Card } from "../components/ui/card";
 import {
   AlertCircle,
@@ -188,7 +188,7 @@ export default function PaymentsPage() {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Toaster />
       {loading && <Loader />}
       <section className="">

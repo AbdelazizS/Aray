@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from "react";
-import { NavBar } from "../components/NavBar";
+import { Navbar } from "../components/Navbar";
 import Heading from "../components/Heading";
 import { useAuth } from "../Context/AuthContext";
 import axios from "axios";
@@ -111,7 +111,7 @@ export default function HistoryPage() {
   // console.log(bookings);
   return (
     <>
-      <NavBar />
+      <Navbar />
       {loading && <Loader />}
       <Toaster />
       <Heading title={"bookings_page_title"} />

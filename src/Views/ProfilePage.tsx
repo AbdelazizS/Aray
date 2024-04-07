@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavBar } from "@/components/NavBar";
+import { Navbar } from "@/components/Navbar";
 import { AlertCircle, Mail, User, Eye, EyeOff, CheckCircle2 } from "lucide-react";
 import Heading from "../components/Heading";
 import { useAuth } from "../Context/AuthContext";
@@ -140,7 +140,7 @@ export default function ProfilePage() {
 
   return (
     <>
-      <NavBar />
+      <Navbar />
       {loading && <Loader />}
       <Toaster />
       <Heading title={"profile_page_title"} />
