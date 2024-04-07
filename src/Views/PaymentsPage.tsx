@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../components/Navbar";
 import { Card } from "../components/ui/card";
 import {
   AlertCircle,

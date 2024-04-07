@@ -1,4 +1,4 @@
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../components/Navbar";
 import Heading from "../components/Heading";
 import { useTranslation } from "react-i18next";
 

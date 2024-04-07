@@ -1,5 +1,5 @@
 import { AlertCircle, Wallet } from "lucide-react";
-import { NavBar } from "@/components/NavBar";
+import { NavBar } from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 import { TimePicker12HourWrapper } from "../components/time-picker/time-picker-12hour-wrapper";
 import { Button } from "../components/ui/button";
