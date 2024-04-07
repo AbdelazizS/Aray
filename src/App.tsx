@@ -14,6 +14,11 @@ import ScrollToTop from "./hooks/ScrollToTop";
 import ProtectedRoute from "./Views/ProtectedRoute";
 import PaymentsPage from "./Views/PaymentsPage";
 import HistoryPage from "./Views/HistoryPage";
+import SettingsPage from "./Views/SettingsPage";
+import ProfilePage from "./Views/ProfilePage";
+import TermsPage from "./Views/TermsPage";
+import PrivacyPage from "./Views/PrivacyPage";
+import SubscriptionsPage from "./Views/SubscribtionsPage";
 
 function App() {
   useEffect(() => {
@@ -31,11 +36,19 @@ function App() {
             <Route path="/activity/:id" element={<DetailsPage />} />
             <Route path="/auth/login" element={<LoginPage />} />
             <Route path="/auth/register" element={<RegisterPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/subscriptions" element={<SubscriptionsPage />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/payments" element={<PaymentsPage />} />
             </Route>
             <Route element={<ProtectedRoute />}>
               <Route path="/history" element={<HistoryPage />} />
+            </Route>
+
+            <Route element={<ProtectedRoute />}>
+              <Route path="/profile" element={<ProfilePage />} />
             </Route>
           </Routes>
         </BrowserRouter>
