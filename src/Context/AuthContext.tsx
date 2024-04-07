@@ -5,7 +5,14 @@ import { useContext, createContext, useState } from "react";
 
 export type GlobalContent = {
   token: string;
-  user: { name?: String; status?: String; id?: number };
+  user: {
+    name?: any;
+    status?: String;
+    id?: number;
+    phone_no?: any;
+    email?: any;
+    gender?: any;
+  };
   logOut: () => void;
   loginAction: (c: any) => void;
   updateAction: (c: any) => void;
@@ -32,62 +39,21 @@ const AuthProvider = ({ children }: any) => {
   );
 
   const deleteAction = async () => {
-    return new Promise((resolve, reject) => {
-      axios
-        .delete(`user/delete-user/${user.id}`, {
-          headers: {
-            "x-auth-token": token,
-          },
-        })
-        .then((response) => {
-          resolve(response);
-          setUser(null);
-          setToken("");
-          localStorage.removeItem("access_token");
-          localStorage.removeItem("user_info");
-          return;
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
+    setUser(null);
+    setToken("");
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("user_info");
   };
 
   const updateAction = async (data: any) => {
-    return new Promise((resolve, reject) => {
-      console.log(data);
-
-      axios
-        .patch(
-          `user/update-user/${user.id}`,
-          {
-            phone_no: data.phone,
-            name: data.user,
-            email: data.email || "",
-          },
-          {
-            headers: {
-              "x-auth-token": token,
-            },
-          }
-        )
-        .then((response) => {
-          resolve(response);
-          const userInfo = JSON.stringify({
-            ...user,
-            phone_no: data.phone,
-            name: data.user,
-            email: data.email,
-          });
-          localStorage.setItem("user_info", userInfo);
-          setUser(JSON.parse(userInfo));
-          return;
-        })
-        .catch((error) => {
-          reject(error);
-          console.log(error);
-        });
+    const userInfo = JSON.stringify({
+      ...user,
+      phone_no: data.phone,
+      name: data.user,
+      email: data.email,
     });
+    localStorage.setItem("user_info", userInfo);
+    setUser(JSON.parse(userInfo));
   };
 
   // const navigate = useNavigate();
@@ -134,11 +100,13 @@ const AuthProvider = ({ children }: any) => {
   };
 
   const logOut = async () => {
+
+    setUser(null);
+    setToken("");
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("user_info");
+
     return new Promise((resolve, reject) => {
-      setUser(null);
-      setToken("");
-      localStorage.removeItem("access_token");
-      localStorage.removeItem("user_info");
       axios
         .post(`auth/logout`, {
           headers: {
@@ -155,6 +123,8 @@ const AuthProvider = ({ children }: any) => {
           console.log(error, "logout");
         });
     });
+
+    
   };
 
   return (

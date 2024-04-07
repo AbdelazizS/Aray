@@ -219,7 +219,7 @@ export default function LoginPage() {
                     </div>
                     <FormMessage />
 
-                    <div className="text-muted-foreground mt-0">
+                    {/* <div className="text-muted-foreground mt-0">
                       {t("change_password", { ns: "forms" })}
                       <Link
                         to={"/auth/reset-password"}
@@ -228,7 +228,7 @@ export default function LoginPage() {
                         {" "}
                         {t("reset_password", { ns: "forms" })}
                       </Link>
-                    </div>
+                    </div> */}
                   </FormItem>
                 )}
               />
