@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "./components/ui/use-toast";
 import { Toaster } from "./components/ui/toaster";
 import { onMessageListener, requestPermission } from "./firebase";
@@ -20,14 +20,14 @@ function Notification() {
 
   requestPermission();
   onMessageListener()
-    .then((payload) => {
+    .then((payload:any) => {
       setNotification({
         title: payload?.notification?.title,
         body: payload?.notification?.body,
         image: payload?.notification?.image,
       });
     })
-    .catch((err) => console.log("failed: ", err));
+    .catch((err:any) => console.log("failed: ", err));
 
   return <Toaster />;
 }

@@ -18,7 +18,7 @@ export const generateToken = async () => {
   const permission = await Notification.requestPermission();
 
   if (permission === "granted") {
-    const token = await getToken(messaging, {
+    await getToken(messaging, {
       vapidKey: `BOmIQHZZMwef6a-60TCCjYopSFqKRBFrjtRn9-gPvVjdf6HND1rHFTDQY09pnERpj2O-WikTkuJCh897cX5kNEg`,
     });
   }
@@ -36,7 +36,7 @@ export const requestPermission = () => {
 
           if (currentToken) {
 
-            console.log('Client Token: ', currentToken);
+            // console.log('Client Token: ', currentToken);
           } else {
 
             console.log('Failed to generate the app registration token.');

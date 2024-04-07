@@ -30,13 +30,6 @@ import {
   PopoverTrigger,
 } from "../components/ui/popover";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../components/ui/select";
 
 import { toast } from "../components/ui/use-toast";
 import { Toaster } from "../components/ui/toaster";
@@ -58,9 +51,9 @@ export default function DetailsPage() {
   const [payload, setPayload] = useState({});
   const { id } = useParams();
 
-  const values = Array(33)
-    .fill(1)
-    .map((n, i) => (n + i).toString());
+  // const values = Array(33)
+  //   .fill(1)
+  //   .map((n, i) => (n + i).toString());
   const auth = useAuth();
   const currDate: any = new Date().setDate(new Date().getUTCDate() - 1);
   const { t } = useTranslation(["forms", "main", "academies"]);
