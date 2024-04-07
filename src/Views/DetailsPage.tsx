@@ -44,6 +44,7 @@ import axios from "axios";
 import { useAuth } from "../Context/AuthContext";
 import Skeleton from "../components/Skeleton";
 import { useTranslation } from "react-i18next";
+import { Input } from "@/components/ui/input";
 
 export default function DetailsPage() {
   const navigate = useNavigate();
@@ -57,9 +58,11 @@ export default function DetailsPage() {
   const [payload, setPayload] = useState({});
   const { id } = useParams();
 
-  const values = ["1", "2", "3", "4", "5"];
+  const values = Array(33)
+    .fill(1)
+    .map((n, i) => (n + i).toString());
   const auth = useAuth();
-  const currDate:any = new Date().setDate(new Date().getUTCDate()-1);
+  const currDate: any = new Date().setDate(new Date().getUTCDate() - 1);
   const { t } = useTranslation(["forms", "main", "academies"]);
 
   const timeFormat = (time: any) => {
@@ -251,7 +254,7 @@ export default function DetailsPage() {
                             selected={field.value}
                             onSelect={field.onChange}
                             disabled={(date) =>
-                              date <  currDate || date < new Date("1900-01-01")
+                              date < currDate || date < new Date("1900-01-01")
                             }
                             initialFocus
                           />
@@ -299,7 +302,7 @@ export default function DetailsPage() {
                 </div>
 
                 <div className="flex items-center gap-2 flex-wrap sm:gap-8 mt-4">
-                  <FormField
+                  {/* <FormField
                     control={form.control}
                     name="peopleCount"
                     render={({ field }) => (
@@ -334,6 +337,34 @@ export default function DetailsPage() {
                             })}
                           </SelectContent>
                         </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  /> */}
+
+                  <FormField
+                    control={form.control}
+                    name="peopleCount"
+                    render={({ field }) => (
+                      <FormItem className="relative">
+                          <FormLabel>
+                            {t("people_count_label", { ns: "forms" })}
+                          </FormLabel>
+                        <div className="flex items-center relative border shadow-sm  rounded-md">
+                          <FormControl className="outline-0 ring-0">
+                            <Input
+                              placeholder={`${t("people_count_placeholder", {
+                                ns: "forms",
+                              })}`}
+                              className="w-full border-0 rounded-none"
+                              onChange={(e: any) => {
+                                field.onChange(e);
+                                setPeopleCount(e.target.value);
+                                setTotalPrice(e.target.value * price);
+                              }}
+                            />
+                          </FormControl>
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}
