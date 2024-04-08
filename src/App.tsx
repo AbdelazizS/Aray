@@ -30,7 +30,7 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <Notification />
+{/*           <Notification /> */}
           
           <Routes>
             <Route path="/" element={<HomePage />} />
