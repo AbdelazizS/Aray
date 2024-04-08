@@ -18,7 +18,6 @@ import SettingsPage from "./Views/SettingsPage";
 import ProfilePage from "./Views/ProfilePage";
 import TermsPage from "./Views/TermsPage";
 import PrivacyPage from "./Views/PrivacyPage";
-import Notification from "./Notification";
 import SubscriptionsPage from "./Views/SubscribtionsPage";
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <Notification />
           
           <Routes>
             <Route path="/" element={<HomePage />} />

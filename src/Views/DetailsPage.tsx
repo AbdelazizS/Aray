@@ -30,7 +30,6 @@ import {
   PopoverTrigger,
 } from "../components/ui/popover";
 
-
 import { toast } from "../components/ui/use-toast";
 import { Toaster } from "../components/ui/toaster";
 import axios from "axios";
@@ -46,7 +45,7 @@ export default function DetailsPage() {
   const [loading, setLoading] = React.useState(false);
   const [price, setPrice] = React.useState<any>();
   const [peopleCount, setPeopleCount] = React.useState(1);
-  const [totalPrice, setTotalPrice] = React.useState<any>(price!);
+  const [totalPrice, setTotalPrice] = React.useState<any>(0);
   const [bookingConfirmed, setBookingConfirmed] = React.useState(false);
   const [payload, setPayload] = useState({});
   const { id } = useParams();
@@ -149,7 +148,7 @@ export default function DetailsPage() {
       .get(`activates/get-activity/${id}`)
       .then((response) => {
         setItem(response.data.data);
-        setTotalPrice(response.data.data.price);
+        // setTotalPrice(response.data.data.price);
         setPrice(response.data.data.price);
       })
       .catch((err) => {
@@ -340,9 +339,9 @@ export default function DetailsPage() {
                     name="peopleCount"
                     render={({ field }) => (
                       <FormItem className="relative">
-                          <FormLabel>
-                            {t("people_count_label", { ns: "forms" })}
-                          </FormLabel>
+                        <FormLabel>
+                          {t("people_count_label", { ns: "forms" })}
+                        </FormLabel>
                         <div className="flex items-center relative border shadow-sm  rounded-md">
                           <FormControl className="outline-0 ring-0">
                             <Input
@@ -384,7 +383,7 @@ export default function DetailsPage() {
                     <Wallet className="w-5 h-5" />{" "}
                     {t("total_price", { ns: "forms" })} :{" "}
                   </div>
-                  {item?.price && (
+                  {totalPrice > 0 && (
                     <div className="font-bold text-lg">{totalPrice}</div>
                   )}
                   {!item?.price && (
@@ -392,7 +391,8 @@ export default function DetailsPage() {
                       <Skeleton />
                     </div>
                   )}
-                  {t("currency", { ns: "main" })}
+
+                  {totalPrice > 0 && <>{t("currency", { ns: "main" })} </>}
                 </div>
 
                 <p className="text-muted-foreground my-1">
