@@ -32,7 +32,7 @@ interface RouteProps {
 // }
 
 
-export const Navbar = ({ setLoading }:any) => {
+export const NavBar = ({ setLoading }:any) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { t } = useTranslation(["Home"]);
 
