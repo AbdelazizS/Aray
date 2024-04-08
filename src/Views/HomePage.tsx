@@ -1,5 +1,6 @@
 import  { useEffect, useState } from "react";
-import { NavBar } from "../components/Navbar";
+import { NavBar } from "@/components/Navbar";
+
 import { Activites } from "../components/Activites";
 import { ScrollToTop } from "../components/ScrollToTop";
 import { Academies } from "../components/Academies";

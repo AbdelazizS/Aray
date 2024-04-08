@@ -3,7 +3,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "./ui/button";
-import { Card, CardTitle } from "./ui/card";
+import { Card } from "./ui/card";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "./Skeleton";
 import { useTranslation } from "react-i18next";
+import DrawerDialog from "./Drawerdialog";
 
 export const Academies = () => {
   const [academies, setAcadeimcs] = useState([]);
@@ -83,7 +84,7 @@ export const Academies = () => {
             <div className="flex gap-4">
               {academies &&
                 academies.map(
-                  ({ name, image }: any, i) =>
+                  ({ name, image, price, id }: any, i) =>
                     i < 4 && (
                       <SwiperSlide key={i} className="max-w-[220px]">
                         <Card
@@ -102,9 +103,8 @@ export const Academies = () => {
                               <div className="max-h-32 w-full bg-gray-200 animate-pulse h-32"></div>
                             )}
                           </div>
-                          <CardTitle className="text-sm px-2 pb-2 hover:text-primary transition-all cursor-pointer">
-                            <span className="text-base font-bold">{name}</span>
-                          </CardTitle>
+                          {/* <span className="text-sm px-2 pb-2 hover:text-primary transition-all cursor-pointer md:text-base font-bold">{name}</span> */}
+                          <DrawerDialog price={price} id={id} title={name} p={2}/>
                         </Card>
                       </SwiperSlide>
                     )
@@ -123,9 +123,9 @@ export const Academies = () => {
                           <div className="flex h-32 p-2">
                             <Skeleton />
                           </div>
-                          <CardTitle className="text-sm px-2 pb-2 hover:text-primary transition-all cursor-pointer pt-1 h-8 w-40">
+                          <div className="text-sm px-2 pb-2 hover:text-primary transition-all cursor-pointer pt-1 h-8 w-40">
                             <Skeleton />
-                          </CardTitle>
+                          </div>
                         </Card>
                       </SwiperSlide>
                     )

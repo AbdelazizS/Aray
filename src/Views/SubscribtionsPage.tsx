@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "../components/Navbar";
+import { NavBar } from "@/components/Navbar";
 import { Card, CardTitle } from "../components/ui/card";
 import { Link } from "react-router-dom";
 import axios from "axios";
