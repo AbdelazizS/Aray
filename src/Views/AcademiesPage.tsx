@@ -1,26 +1,10 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "@/components/Navbar";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "@/components/Skeleton";
 import Heading from "@/components/Heading";
 import { useTranslation } from "react-i18next";
-import { CircleX } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
-import { useAuth } from "../Context/AuthContext";
 import DrawerDialog from "@/components/DrawerDialog";
 
 export default function AcademiesPagePage() {
