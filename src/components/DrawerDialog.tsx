@@ -173,7 +173,7 @@ export default function DrawerDialog({ price, id, title, p }: any) {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <h3
-          className={`p-${p} text-muted-foreground hover:underline cursor-pointer transition-all duration-200`}
+          className={`p-${p} text-foreground hover:text-primary cursor-pointer transition-all duration-200`}
         >
           {t(title, { ns: "academies" })}
         </h3>

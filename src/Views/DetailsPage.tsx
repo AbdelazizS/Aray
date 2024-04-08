@@ -1,5 +1,6 @@
 import { AlertCircle, Wallet } from "lucide-react";
 import { NavBar } from "@/components/Navbar";
+
 import React, { useEffect, useState } from "react";
 import { TimePicker12HourWrapper } from "../components/time-picker/time-picker-12hour-wrapper";
 import { Button } from "../components/ui/button";
@@ -30,20 +31,13 @@ import {
   PopoverTrigger,
 } from "../components/ui/popover";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../components/ui/select";
-
 import { toast } from "../components/ui/use-toast";
 import { Toaster } from "../components/ui/toaster";
 import axios from "axios";
 import { useAuth } from "../Context/AuthContext";
 import Skeleton from "../components/Skeleton";
 import { useTranslation } from "react-i18next";
+import { Input } from "@/components/ui/input";
 
 export default function DetailsPage() {
   const navigate = useNavigate();
@@ -52,14 +46,16 @@ export default function DetailsPage() {
   const [loading, setLoading] = React.useState(false);
   const [price, setPrice] = React.useState<any>();
   const [peopleCount, setPeopleCount] = React.useState(1);
-  const [totalPrice, setTotalPrice] = React.useState<any>(price!);
+  const [totalPrice, setTotalPrice] = React.useState<any>(0);
   const [bookingConfirmed, setBookingConfirmed] = React.useState(false);
   const [payload, setPayload] = useState({});
   const { id } = useParams();
 
-  const values = ["1", "2", "3", "4", "5"];
+  // const values = Array(33)
+  //   .fill(1)
+  //   .map((n, i) => (n + i).toString());
   const auth = useAuth();
-  const currDate:any = new Date().setDate(new Date().getUTCDate()-1);
+  const currDate: any = new Date().setDate(new Date().getUTCDate() - 1);
   const { t } = useTranslation(["forms", "main", "academies"]);
 
   const timeFormat = (time: any) => {
@@ -153,7 +149,7 @@ export default function DetailsPage() {
       .get(`activates/get-activity/${id}`)
       .then((response) => {
         setItem(response.data.data);
-        setTotalPrice(response.data.data.price);
+        // setTotalPrice(response.data.data.price);
         setPrice(response.data.data.price);
       })
       .catch((err) => {
@@ -251,7 +247,7 @@ export default function DetailsPage() {
                             selected={field.value}
                             onSelect={field.onChange}
                             disabled={(date) =>
-                              date <  currDate || date < new Date("1900-01-01")
+                              date < currDate || date < new Date("1900-01-01")
                             }
                             initialFocus
                           />
@@ -299,7 +295,7 @@ export default function DetailsPage() {
                 </div>
 
                 <div className="flex items-center gap-2 flex-wrap sm:gap-8 mt-4">
-                  <FormField
+                  {/* <FormField
                     control={form.control}
                     name="peopleCount"
                     render={({ field }) => (
@@ -337,6 +333,34 @@ export default function DetailsPage() {
                         <FormMessage />
                       </FormItem>
                     )}
+                  /> */}
+
+                  <FormField
+                    control={form.control}
+                    name="peopleCount"
+                    render={({ field }) => (
+                      <FormItem className="relative">
+                        <FormLabel>
+                          {t("people_count_label", { ns: "forms" })}
+                        </FormLabel>
+                        <div className="flex items-center relative border shadow-sm  rounded-md">
+                          <FormControl className="outline-0 ring-0">
+                            <Input
+                              placeholder={`${t("people_count_placeholder", {
+                                ns: "forms",
+                              })}`}
+                              className="w-full border-0 rounded-none"
+                              onChange={(e: any) => {
+                                field.onChange(e);
+                                setPeopleCount(e.target.value);
+                                setTotalPrice(e.target.value * price);
+                              }}
+                            />
+                          </FormControl>
+                        </div>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
                   <div>
                     <span className="text-muted-foreground text-xs">
@@ -360,7 +384,7 @@ export default function DetailsPage() {
                     <Wallet className="w-5 h-5" />{" "}
                     {t("total_price", { ns: "forms" })} :{" "}
                   </div>
-                  {item?.price && (
+                  {totalPrice > 0 && (
                     <div className="font-bold text-lg">{totalPrice}</div>
                   )}
                   {!item?.price && (
@@ -368,7 +392,8 @@ export default function DetailsPage() {
                       <Skeleton />
                     </div>
                   )}
-                  {t("currency", { ns: "main" })}
+
+                  {totalPrice > 0 && <>{t("currency", { ns: "main" })} </>}
                 </div>
 
                 <p className="text-muted-foreground my-1">
