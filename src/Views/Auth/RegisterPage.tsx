@@ -178,7 +178,7 @@ export default function RegisterPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
         <div className="w-full bg-muted/40 dark:bg-transparent  flex items-center justify-center p-4">
           <div
-            className="max-w-md md:max-w-lg w-full space-y-5"
+            className="max-w-sm md:max-w-lg w-full space-y-5"
             data-aos-duration="1000"
             data-aos="fade-right"
           >
@@ -194,7 +194,7 @@ export default function RegisterPage() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="mt-5 max-w-md md:max-w-lg mx-auto  space-y-6"
+                className="mt-5 w-full space-y-6"
               >
                 {errorMsg && (
                   <p className="text-destructive font-medium md:text-lg">
