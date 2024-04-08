@@ -1,4 +1,5 @@
-import { Navbar } from "../components/Navbar";
+
+import { NavBar } from "@/components/Navbar";
 import Heading from "../components/Heading";
 import { useTranslation } from "react-i18next";
 
@@ -6,7 +7,7 @@ export default function TermsPage() {
   const { t } = useTranslation(["main"]);
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       <section className="">
         <Heading title={"terms_page_title"}></Heading>
 

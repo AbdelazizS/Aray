@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Navbar } from "@/components/Navbar";
+
+import { NavBar } from "@/components/Navbar";
+
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import axios from "axios";
 import Skeleton from "@/components/Skeleton";
@@ -35,7 +37,7 @@ export default function AcademiesPagePage() {
 
   return (
     <>
-      <Navbar />
+      <NavBar />
       <section className="">
         <Heading title={"academies_page_title"} />
         <div className="max-w-7xl mx-auto py-3">

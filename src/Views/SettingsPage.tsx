@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar } from "../components/Navbar";
+import { NavBar } from "@/components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Card,
@@ -128,7 +128,7 @@ export default function SettingsPage() {
     <>
       <section className="">
         {loading && <Loader />}
-        <Navbar />
+        <NavBar />
         <Heading title={"settings_page_title"} />
         <div className="max-w-7xl mx-auto p-4 p mb-24">
           <div className="flex gap-8 flex-col md:flex-row">

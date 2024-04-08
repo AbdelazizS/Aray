@@ -1,5 +1,6 @@
 import  { useEffect, useState } from "react";
-import { Navbar } from "../components/Navbar";
+import { NavBar } from "@/components/Navbar";
+
 import { Activites } from "../components/Activites";
 import { ScrollToTop } from "../components/ScrollToTop";
 import { Academies } from "../components/Academies";
@@ -26,7 +27,7 @@ export default function HomePage() {
     <>
       {auth.user && hide && <PreLoaderPage message={"welcome"} />}
       {loading && <Loader />}
-        <Navbar setLoading={setLoading} />
+        <NavBar setLoading={setLoading} />
         <Hero />
         <Academies />
         <Activites />
