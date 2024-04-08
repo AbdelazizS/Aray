@@ -149,8 +149,8 @@ export default function RegisterPage() {
           ) {
             setErrorMsg(`${t("phone_exist", { ns: "main" })}`);
           }
-          if (error.response.data.error) {
-            setErrorMsg(`${t("email_unvalid", { ns: "main" })}`);
+          if (error.response.data.message) {
+            setErrorMsg(error.response.data.message);
           }
         } else {
           toast({
